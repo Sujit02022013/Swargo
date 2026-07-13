@@ -62,58 +62,6 @@ nav{
 .featured-project{
     grid-column:1/-1;
     overflow:hidden;
-    transition:.4s;
-}
-
-.featured-project:hover{
-    transform:translateY(-8px);
-}
-
-.featured-project video{
-    width:100%;
-    aspect-ratio:16/9;
-    display:block;
-    background:#000;
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.project-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:18px;
-}
-
-.project-tags span{
-    background:rgba(0,212,255,.12);
-    border:1px solid rgba(0,212,255,.25);
-    color:#00d4ff;
-    padding:8px 14px;
-    border-radius:999px;
-    font-size:.85rem;
-}
-
-@media(max-width:768px){
-
-.featured-project video{
-    aspect-ratio:16/9;
-}
-
-.project-content{
-    padding:20px;
-}
-
-.project-tags{
-    justify-content:center;
-}
-
-}
-
-.featured-project video{
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    display:block;
 }
 
 .project-tags{
@@ -133,10 +81,6 @@ nav{
 }
 
 @media(max-width:768px){
-
-.featured-project video{
-    height:250px;
-}
 
 .project-tags{
     justify-content:center;
@@ -551,19 +495,13 @@ sound design, and color grading.
 <p>Professional long-form editing with transitions, effects, captions and sound design.</p>
 </div>
 
-<div class="service glass">
-<span>📱</span>
-<h3>Reels & Shorts</h3>
-<p>High-retention social media content optimized for engagement.</p>
-</div>
+        <div class="service glass">
+        <span>📱</span>
+        <h3>Reels & Shorts</h3>
+        <p>High-retention social media content optimized for engagement.</p>
+        </div>
 
-<div class="service glass">
-<span>🎮</span>
-<h3>Gaming Videos</h3>
-<p>Cinematic gaming montages, highlights and entertaining edits.</p>
-</div>
-
-</div>
+        </div>
 </section>
 
 <!-- PORTFOLIO -->
@@ -572,64 +510,78 @@ sound design, and color grading.
 
     <div class="projects">
 
-        <!-- Business Promotional Video -->
-        <div class="project glass featured-project">
-
-            <video controls preload="metadata" poster="">
-                <source src="https://www.dropbox.com/scl/fi/az7c3tmpdz4dppwlfbhec/0406.mp4?raw=1" type="video/mp4">
-            </video>
-
+        <!-- BUSINESS PROMOTIONAL VIDEO -->
+        <div class="project glass">
+            <div class="project-image">🏆</div>
             <div class="project-content">
-
-                <h3>🏆 Business Promotional Video</h3>
+                <h3>Business Promotional Video</h3>
 
                 <p>
-                    A professional business promotional video featuring
-                    cinematic editing, motion graphics, Bengali subtitles,
-                    storytelling, color grading and marketing-focused visuals.
+                    Professional promotional video featuring motion graphics,
+                    Bengali subtitles, color grading, smooth transitions,
+                    and engaging storytelling designed for business marketing.
                 </p>
 
                 <div class="project-tags">
                     <span>Motion Graphics</span>
-                    <span>Marketing</span>
-                    <span>Subtitles</span>
                     <span>Color Grading</span>
+                    <span>Subtitles</span>
+                    <span>Marketing</span>
                 </div>
-
             </div>
-
         </div>
 
-        <!-- School Project -->
-        <div class="project glass featured-project">
-
-            <video controls preload="metadata" poster="">
-                <source src="https://www.dropbox.com/scl/fi/dr6x2n0peyjxgp1nxzw6i/School-Project.mp4?raw=1" type="video/mp4">
-            </video>
-
+        <!-- SCHOOL PROJECT -->
+        <div class="project glass">
+            <div class="project-image">🎓</div>
             <div class="project-content">
-
-                <h3>🎓 School Project Video</h3>
+                <h3>School Project</h3>
 
                 <p>
-                    An educational school project edited with smooth transitions,
-                    visual effects, engaging presentation techniques and
-                    professional storytelling.
+                    A creative school project edit showcasing storytelling,
+                    transitions, and engaging visuals crafted for the classroom.
                 </p>
 
                 <div class="project-tags">
-                    <span>Education</span>
-                    <span>Visual Effects</span>
-                    <span>Presentation</span>
-                    <span>Editing</span>
+                    <span>Storytelling</span>
+                    <span>Transitions</span>
+                    <span>Vertical</span>
                 </div>
-
             </div>
-
         </div>
 
     </div>
 </section>
+
+<!-- STATS -->
+<section class="reveal">
+<h2 class="section-title">Achievements</h2>
+
+<div class="stats">
+
+<div class="stat glass">
+<h2 class="counter" data-target="20">0</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat glass">
+<h2 class="counter" data-target="10">0</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat glass">
+<h2 class="counter" data-target="2">0</h2>
+<p>Years Learning</p>
+</div>
+
+<div class="stat glass">
+<h2 class="counter" data-target="100">0</h2>
+<p>% Dedication</p>
+</div>
+
+</div>
+</section>
+
 <!-- TESTIMONIAL -->
 <section class="reveal">
 <h2 class="section-title">Client Feedback</h2>
