@@ -1,712 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swargo Biswas | Premium Video Editor Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-    --primary:#00d4ff;
-    --secondary:#7c3aed;
-    --dark:#050816;
-    --card:rgba(255,255,255,0.08);
-    --text:#ffffff;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:var(--dark);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* Animated Background */
-body::before{
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at 20% 20%, rgba(0,212,255,.15), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(124,58,237,.18), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(0,212,255,.10), transparent 30%);
-    z-index:-1;
-}
-
-/* Navbar */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:rgba(5,8,22,.85);
-    backdrop-filter:blur(15px);
-}
-.featured-project{
-    grid-column:1/-1;
-    overflow:hidden;
-}
-
-.project-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:15px;
-}
-
-.project-tags span{
-    background:rgba(0,212,255,.15);
-    border:1px solid rgba(0,212,255,.4);
-    color:#00d4ff;
-    padding:8px 15px;
-    border-radius:50px;
-    font-size:.85rem;
-}
-
-@media(max-width:768px){
-
-.project-tags{
-    justify-content:center;
-}
-
-}
-.logo{
-    font-size:1.8rem;
-    font-weight:800;
-    background:linear-gradient(45deg,var(--primary),var(--secondary));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--primary);
-}
-
-/* Hero */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 10%;
-}
-
-.hero h1{
-    font-size:5rem;
-    font-weight:800;
-}
-
-.hero h1 span{
-    background:linear-gradient(45deg,var(--primary),var(--secondary));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.typing{
-    font-size:1.8rem;
-    margin:20px 0;
-    color:var(--primary);
-    min-height:40px;
-}
-
-.hero p{
-    max-width:750px;
-    margin:auto;
-    color:#cbd5e1;
-    line-height:1.8;
-}
-
-.hero-btns{
-    margin-top:35px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    border-radius:50px;
-    text-decoration:none;
-    margin:10px;
-    font-weight:600;
-    transition:.4s;
-}
-
-.primary{
-    background:linear-gradient(45deg,var(--primary),var(--secondary));
-    color:white;
-}
-
-.secondary{
-    border:2px solid var(--primary);
-    color:var(--primary);
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-}
-
-/* Sections */
-section{
-    padding:100px 10%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:60px;
-    color:var(--primary);
-}
-
-/* Glass Card */
-.glass{
-    background:var(--card);
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-}
-
-/* About */
-.about-content{
-    padding:35px;
-}
-
-.about-content p{
-    color:#cbd5e1;
-    line-height:2;
-}
-
-/* Skills */
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.skill{
-    padding:30px;
-    text-align:center;
-}
-
-.skill h3{
-    margin-bottom:10px;
-}
-
-/* Services */
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.service{
-    padding:35px;
-    text-align:center;
-}
-
-.service span{
-    font-size:55px;
-}
-
-.service h3{
-    margin:15px 0;
-}
-
-/* Portfolio */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-}
-
-.project{
-    overflow:hidden;
-}
-
-.project-image{
-    height:220px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:80px;
-}
-
-.project-content{
-    padding:25px;
-}
-
-/* Stats */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:25px;
-}
-
-.stat{
-    padding:30px;
-    text-align:center;
-}
-
-.stat h2{
-    font-size:3rem;
-    color:var(--primary);
-}
-
-/* Testimonials */
-.testimonial{
-    max-width:900px;
-    margin:auto;
-    padding:40px;
-    text-align:center;
-}
-
-.testimonial p{
-    color:#cbd5e1;
-    font-style:italic;
-}
-
-/* Contact */
-.contact{
-    text-align:center;
-}
-
-.contact-box{
-    max-width:850px;
-    margin:auto;
-    padding:50px;
-}
-
-.contact-links{
-    margin-top:25px;
-}
-
-.contact-links a{
-    color:white;
-    text-decoration:none;
-    display:block;
-    margin:12px 0;
-}
-
-/* Footer */
-footer{
-    text-align:center;
-    padding:35px;
-    color:#94a3b8;
-}
-
-/* WhatsApp */
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:70px;
-    height:70px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
-    text-decoration:none;
-    color:white;
-    box-shadow:0 0 20px rgba(0,0,0,.4);
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-    100%{transform:scale(1);}
-}
-
-.reveal{
-    opacity:0;
-    transform:translateY(60px);
-    transition:1s;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-@media(max-width:900px){
-
-.hero h1{
-font-size:3rem;
-}
-
-nav ul{
-display:none;
-}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Swargo Biswas — Full Stack Developer and AI-driven programmer portfolio." />
+  <title>Swargo Biswas | Full Stack Developer</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:rgba(16,31,52,.68);
+      --text:#eef6ff;
+      --muted:#9db0c7;
+      --line:rgba(255,255,255,.10);
+      --accent:#65e8ff;
+      --accent2:#9b7cff;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(101,232,255,.10),transparent 28%),
+        radial-gradient(circle at 90% 20%,rgba(155,124,255,.13),transparent 30%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .glass{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .nav{
+      position:fixed;top:0;left:0;width:100%;z-index:50;
+      border-bottom:1px solid transparent;
+      transition:.3s ease;
+    }
+    .nav.scrolled{background:rgba(7,17,31,.75);border-color:var(--line);backdrop-filter:blur(16px)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.2rem;font-weight:800;letter-spacing:.04em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{font-size:.94rem;color:var(--muted);transition:.2s}
+    .nav-links a:hover{color:var(--text)}
+    .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;cursor:pointer}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:52px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:999px;border:1px solid rgba(101,232,255,.22);background:rgba(101,232,255,.07);color:var(--accent);font-size:.82rem;font-weight:700;letter-spacing:.03em}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent);animation:pulse 1.7s infinite}
+    @keyframes pulse{50%{opacity:.35;transform:scale(.75)}}
+    h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.96;letter-spacing:-.06em;margin:22px 0}
+    .gradient-text{background:linear-gradient(100deg,#fff,#aeefff 38%,#b69cff 75%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:690px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;padding:12px 18px;font-weight:750;border:1px solid var(--line);transition:.25s ease;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#81baff);color:#06111c;border:0;box-shadow:0 12px 30px rgba(101,232,255,.18)}
+    .btn:hover{transform:translateY(-3px);filter:brightness(1.05)}
+    .hero-card{padding:26px;border-radius:28px;position:relative;overflow:hidden}
+    .hero-card::before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(101,232,255,.16);filter:blur(30px);right:-80px;top:-70px}
+    .code-window{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#06101c}
+    .window-bar{padding:12px 15px;display:flex;gap:7px;border-bottom:1px solid var(--line)}
+    .window-bar i{width:9px;height:9px;border-radius:50%;background:#71839a}
+    pre{padding:22px;overflow:auto;font:500 .84rem/1.75 "SFMono-Regular",Consolas,monospace;color:#cce4ff}
+    .kw{color:#9b7cff}.fn{color:#65e8ff}.str{color:#d6ff8a}.cm{color:#65758b}
+    section{padding:100px 0}
+    .section-head{margin-bottom:38px}
+    .section-head .label{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .section-head h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;margin-top:8px}
+    .section-head p{color:var(--muted);max-width:690px;margin-top:13px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(11,26,45,.62);transition:.35s ease}
+    .card:hover{transform:translateY(-7px);border-color:rgba(101,232,255,.22)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+    .stat strong{display:block;font-size:1.7rem}.stat span{color:var(--muted);font-size:.85rem}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#dceaff;font-size:.86rem}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{min-height:330px;display:flex;flex-direction:column;justify-content:space-between}
+    .project-num{font-size:.76rem;color:var(--accent);font-weight:800;letter-spacing:.12em}
+    .project h3{font-size:1.4rem;margin:10px 0}
+    .project p{color:var(--muted);font-size:.92rem}
+    .project .stack{margin-top:16px}
+    .project-icon{font-size:2.4rem;margin-bottom:8px}
+    .ai-box{position:relative;overflow:hidden}
+    .ai-box::after{content:"";position:absolute;width:300px;height:300px;right:-150px;bottom:-160px;border-radius:50%;background:rgba(155,124,255,.18);filter:blur(25px)}
+    .timeline{display:grid;gap:16px}
+    .timeline-item{display:grid;grid-template-columns:130px 1fr;gap:25px;align-items:start}
+    .timeline-year{color:var(--accent);font-weight:800}
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    .contact-card{padding:30px}
+    .contact-links{display:grid;gap:10px;margin-top:18px}
+    .contact-link{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:14px;color:#dceaff}
+    footer{padding:26px 0 45px;color:var(--muted);font-size:.88rem;text-align:center}
+    .reveal{opacity:0;transform:translateY(24px);transition:.75s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .blob{position:fixed;inset:auto auto 10% 4%;width:220px;height:220px;border-radius:50%;background:rgba(101,232,255,.09);filter:blur(55px);pointer-events:none;z-index:-1}
+    .cursor-glow{position:fixed;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(101,232,255,.10),transparent 70%);pointer-events:none;transform:translate(-50%,-50%);z-index:-1}
+    .backtop{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;background:rgba(12,27,47,.85);border:1px solid var(--line);color:var(--text);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;cursor:pointer}
+    .backtop.show{opacity:1;pointer-events:auto}
+    @media(max-width:900px){
+      .hero-grid,.about-grid,.contact{grid-template-columns:1fr}
+      .project-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:650px){
+      .container{width:min(calc(100% - 24px),var(--max))}
+      .nav-links{position:absolute;top:76px;left:12px;right:12px;display:none;flex-direction:column;padding:15px;border-radius:16px;background:rgba(8,19,33,.97);border:1px solid var(--line)}
+      .nav-links.open{display:flex}.menu-btn{display:block}
+      .project-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .timeline-item{grid-template-columns:1fr;gap:5px}
+      section{padding:75px 0}
+      h1{font-size:3.2rem}
+    }
+  </style>
 </head>
 <body>
+  <div class="blob"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-<nav>
-<div class="logo">Swargo.</div>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-<div>
-<h1>Swargo <span>Biswas</span></h1>
-
-<div class="typing"></div>
-
-<p>
-Transforming raw footage into captivating stories.
-I help creators, businesses, and brands create engaging
-videos that attract attention and leave a lasting impact.
-</p>
-
-<div class="hero-btns">
-<a href="#portfolio" class="btn primary">View Portfolio</a>
-<a href="https://wa.me/8801712655265" class="btn secondary">Hire Me</a>
-</div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="reveal">
-<h2 class="section-title">About Me</h2>
-
-<div class="about-content glass">
-<p>
-Hello! I'm Swargo Biswas, a passionate Grade 7 student and
-creative video editor. I specialize in creating engaging
-YouTube videos, social media reels, gaming edits, and
-promotional content.
-
-I love turning ordinary footage into visually stunning
-stories through creative editing, transitions, motion graphics,
-sound design, and color grading.
-</p>
-</div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="reveal">
-<h2 class="section-title">Skills</h2>
-
-<div class="skills">
-
-<div class="skill glass">
-<h3>CapCut</h3>
-</div>
-
-<div class="skill glass">
-<h3>Smooth Cuts and edits</h3>
-</div>
-
-<div class="skill glass">
-<h3>Visual Effects</h3>
-</div>
-
-<div class="skill glass">
-<h3>Audio Mixing</h3>
-</div>
-
-<div class="skill glass">
-<h3>Motion Graphics</h3>
-</div>
-
-<div class="skill glass">
-<h3>Color Grading</h3>
-</div>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="reveal">
-<h2 class="section-title">Services</h2>
-
-<div class="services">
-
-<div class="service glass">
-<span>🎬</span>
-<h3>YouTube Editing</h3>
-<p>Professional long-form editing with transitions, effects, captions and sound design.</p>
-</div>
-
-        <div class="service glass">
-        <span>📱</span>
-        <h3>Reels & Shorts</h3>
-        <p>High-retention social media content optimized for engagement.</p>
-        </div>
-
-        </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="reveal">
-    <h2 class="section-title">Featured Projects</h2>
-
-    <div class="projects">
-
-        <!-- BUSINESS PROMOTIONAL VIDEO -->
-        <div class="project glass">
-            <div class="project-image">🏆</div>
-            <div class="project-content">
-                <h3>Business Promotional Video</h3>
-
-                <p>
-                    Professional promotional video featuring motion graphics,
-                    Bengali subtitles, color grading, smooth transitions,
-                    and engaging storytelling designed for business marketing.
-                </p>
-
-                <div class="project-tags">
-                    <span>Motion Graphics</span>
-                    <span>Color Grading</span>
-                    <span>Subtitles</span>
-                    <span>Marketing</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- SCHOOL PROJECT -->
-        <div class="project glass">
-            <div class="project-image">🎓</div>
-            <div class="project-content">
-                <h3>School Project</h3>
-
-                <p>
-                    A creative school project edit showcasing storytelling,
-                    transitions, and engaging visuals crafted for the classroom.
-                </p>
-
-                <div class="project-tags">
-                    <span>Storytelling</span>
-                    <span>Transitions</span>
-                    <span>Vertical</span>
-                </div>
-            </div>
-        </div>
-
+  <header class="nav" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">SWARGO<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#ai">AI Development</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-</section>
+  </header>
 
-<!-- STATS -->
-<section class="reveal">
-<h2 class="section-title">Achievements</h2>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> Building the future with code + AI</div>
+          <h1><span class="gradient-text">Swargo Biswas</span><br/>Full Stack Developer.</h1>
+          <p>
+            A passionate young developer building modern web applications with Django and React,
+            while exploring AI-driven programming workflows with Claude, Codex, Antigravity and ChatGPT.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">Explore Projects →</a>
+            <a class="btn" href="#contact">Get in Touch</a>
+          </div>
+        </div>
 
-<div class="stats">
+        <div class="hero-card glass reveal">
+          <div class="code-window">
+            <div class="window-bar"><i></i><i></i><i></i></div>
+            <pre><span class="cm">// swargo.profile</span>
+<span class="kw">const</span> developer = {
+  <span class="fn">name</span>: <span class="str">"Swargo Biswas"</span>,
+  <span class="fn">age</span>: <span class="str">13</span>,
+  <span class="fn">role</span>: <span class="str">"Full Stack Developer"</span>,
+  <span class="fn">stack</span>: [<span class="str">"Django"</span>, <span class="str">"React"</span>],
+  <span class="fn">focus</span>: <span class="str">"AI-driven development"</span>,
+  <span class="fn">projects</span>: [
+    <span class="str">"E-Commerce"</span>,
+    <span class="str">"Pantry Pulse"</span>,
+    <span class="str">"OlympiGo"</span>
+  ]
+};</pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="stat glass">
-<h2 class="counter" data-target="20">0</h2>
-<p>Projects</p>
-</div>
+    <section id="about">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="label">01 — About</div>
+          <h2>Learning by building real things.</h2>
+          <p>My portfolio is a collection of hands-on projects, experiments and ideas that help me grow as a software developer.</p>
+        </div>
+        <div class="about-grid">
+          <article class="card">
+            <h3>Developer Mindset</h3>
+            <p style="color:var(--muted);margin-top:10px">
+              I enjoy turning ideas into working products, learning how frontend and backend systems connect,
+              and solving technical problems through experimentation and project-based learning.
+            </p>
+            <div class="stats">
+              <div class="stat"><strong>13</strong><span>Years old</span></div>
+              <div class="stat"><strong>3+</strong><span>Major projects</span></div>
+              <div class="stat"><strong>AI</strong><span>Assisted workflow</span></div>
+            </div>
+          </article>
+          <article class="card" id="skills">
+            <h3>Core Skills</h3>
+            <div class="chips">
+              <span class="chip">Django</span><span class="chip">Django REST Framework</span>
+              <span class="chip">React</span><span class="chip">Tailwind CSS</span>
+              <span class="chip">REST APIs</span><span class="chip">MySQL</span>
+              <span class="chip">PostgreSQL</span><span class="chip">SQLite</span>
+              <span class="chip">Git & GitHub</span><span class="chip">Responsive UI</span>
+              <span class="chip">API Testing</span><span class="chip">AI-Assisted Coding</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="stat glass">
-<h2 class="counter" data-target="10">0</h2>
-<p>Happy Clients</p>
-</div>
+    <section id="projects">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="label">02 — Selected Projects</div>
+          <h2>Ideas turned into applications.</h2>
+          <p>Personal development projects created for learning, experimentation and portfolio building.</p>
+        </div>
 
-<div class="stat glass">
-<h2 class="counter" data-target="2">0</h2>
-<p>Years Learning</p>
-</div>
+        <div class="project-grid">
+          <article class="card project">
+            <div>
+              <div class="project-icon">🛒</div>
+              <div class="project-num">PROJECT 01</div>
+              <h3>E-Commerce App</h3>
+              <p>A full-stack online shopping application with product management, shopping cart concepts, authentication, database integration and responsive UI.</p>
+              <div class="chips stack"><span class="chip">Django</span><span class="chip">React</span><span class="chip">REST API</span></div>
+            </div>
+            <p style="margin-top:22px;color:#dceaff;font-weight:700">Personal project · Development</p>
+          </article>
 
-<div class="stat glass">
-<h2 class="counter" data-target="100">0</h2>
-<p>% Dedication</p>
-</div>
+          <article class="card project">
+            <div>
+              <div class="project-icon">🥫</div>
+              <div class="project-num">PROJECT 02</div>
+              <h3>Pantry Pulse</h3>
+              <p>An AI-driven application concept focused on intelligent pantry and food information management, combining structured data with AI-powered workflows.</p>
+              <div class="chips stack"><span class="chip">Django</span><span class="chip">React</span><span class="chip">AI</span></div>
+            </div>
+            <p style="margin-top:22px;color:#dceaff;font-weight:700">Personal project · Not commercially published</p>
+          </article>
 
-</div>
-</section>
+          <article class="card project">
+            <div>
+              <div class="project-icon">🏆</div>
+              <div class="project-num">PROJECT 03</div>
+              <h3>OlympiGo</h3>
+              <p>A programming-olympiad platform concept designed around participants, problems, contests, registration workflows and backend API architecture.</p>
+              <div class="chips stack"><span class="chip">Django</span><span class="chip">React</span><span class="chip">DRF</span></div>
+            </div>
+            <p style="margin-top:22px;color:#dceaff;font-weight:700">Recent project · In development</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- TESTIMONIAL -->
-<section class="reveal">
-<h2 class="section-title">Client Feedback</h2>
+    <section id="ai">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="label">03 — AI Development</div>
+          <h2>AI is part of the workflow.</h2>
+          <p>I use modern AI tools to learn faster, explore ideas, debug problems and improve development workflows.</p>
+        </div>
+        <article class="card ai-box">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:1">
+            <div>
+              <h3>AI-assisted engineering</h3>
+              <p style="color:var(--muted);margin-top:10px">
+                AI tools help me understand unfamiliar concepts, generate and refine code, troubleshoot errors,
+                plan application architecture and experiment with new technologies.
+              </p>
+            </div>
+            <div class="chips" style="align-content:start">
+              <span class="chip">Claude</span>
+              <span class="chip">OpenAI Codex</span>
+              <span class="chip">Antigravity</span>
+              <span class="chip">ChatGPT</span>
+              <span class="chip">AI Debugging</span>
+              <span class="chip">AI Code Generation</span>
+              <span class="chip">Architecture Planning</span>
+              <span class="chip">Learning & Research</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<div class="testimonial glass">
-<p id="testimonialText">
-"Swargo delivered excellent editing work and was very easy to communicate with."
-</p>
-</div>
-</section>
+    <section id="journey">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="label">04 — Journey</div>
+          <h2>Growing one project at a time.</h2>
+        </div>
+        <div class="card timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">NOW</div>
+            <div><h3>Full Stack Development</h3><p style="color:var(--muted)">Building Django + React applications and strengthening backend, API and database skills.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">RECENT</div>
+            <div><h3>OlympiGo</h3><p style="color:var(--muted)">Exploring how a real-world olympiad platform could be designed from frontend to backend.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">NEXT</div>
+            <div><h3>AI + Competitive Programming</h3><p style="color:var(--muted)">Deepening algorithmic thinking while using AI responsibly as a development and learning accelerator.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact reveal">
+    <section id="contact">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="label">05 — Contact</div>
+          <h2>Let's build something interesting.</h2>
+          <p>For collaborations, projects, learning opportunities or technology conversations.</p>
+        </div>
+        <div class="contact">
+          <article class="card contact-card">
+            <h3>Reach out</h3>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:your-email@example.com">✉️ <span>your-email@example.com</span></a>
+              <a class="contact-link" href="https://github.com/yourusername" target="_blank" rel="noreferrer">💻 <span>GitHub Profile</span></a>
+              <a class="contact-link" href="#" onclick="copyText('Swargo Biswas');return false;">📋 <span>Copy Name</span></a>
+            </div>
+          </article>
+          <article class="card contact-card">
+            <h3>Currently learning</h3>
+            <p style="color:var(--muted);margin-top:10px">
+              Advanced full-stack architecture, API design, AI-assisted programming,
+              data structures, algorithms and competitive programming.
+            </p>
+            <div class="chips">
+              <span class="chip">Build</span><span class="chip">Learn</span><span class="chip">Experiment</span><span class="chip">Improve</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<h2 class="section-title">Let's Work Together</h2>
+  <footer>
+    <div class="container">© <span id="year"></span> Swargo Biswas · Designed & built as a single-page portfolio.</div>
+  </footer>
 
-<div class="contact-box glass">
+  <button class="backtop" id="backtop" aria-label="Back to top">↑</button>
 
-<h3>Need a Video Editor?</h3>
+  <script>
+    const navbar = document.getElementById("navbar");
+    const backtop = document.getElementById("backtop");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const cursorGlow = document.getElementById("cursorGlow");
 
-<p>Let's create something amazing together.</p>
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 20);
+      backtop.classList.toggle("show", window.scrollY > 500);
+    });
 
-<div class="contact-links">
-<a href="https://wa.me/8801712655265">📱 WhatsApp: 01712655265</a>
+    backtop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
 
-<a href="mailto:swargo02022013@gmail.com">
-📧 swargo02022013@gmail.com
-</a>
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-<a href="https://www.facebook.com/profile.php?id=61577016299882">
-🌐 Facebook Profile
-</a>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, {threshold:.12});
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-<a href="https://www.instagram.com/swargo_digital_pro/">
-📸 Instagram @swargo_digital_pro
-</a>
-</div>
+    window.addEventListener("mousemove", e => {
+      cursorGlow.style.left = e.clientX + "px";
+      cursorGlow.style.top = e.clientY + "px";
+    });
 
-<br>
+    function copyText(text){
+      navigator.clipboard?.writeText(text).then(() => alert("Copied: " + text));
+    }
 
-<a href="https://wa.me/8801712655265" class="btn primary">
-Hire Me Now
-</a>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Swargo Biswas • Premium Video Editing Portfolio
-</footer>
-
-<a href="https://wa.me/8801712655265" class="whatsapp">
-💬
-</a>
-
-<script>
-
-// Typing Effect
-const words = [
-"Video Editor",
-"Content Creator",
-"Story Teller",
-"Creative Freelancer"
-];
-
-let i=0;
-let j=0;
-let current="";
-let isDeleting=false;
-
-function type(){
-
-current=words[i];
-
-if(isDeleting){
-document.querySelector(".typing").textContent=
-current.substring(0,j--);
-}else{
-document.querySelector(".typing").textContent=
-current.substring(0,j++);
-}
-
-if(!isDeleting && j===current.length+1){
-isDeleting=true;
-setTimeout(type,1200);
-return;
-}
-
-if(isDeleting && j===0){
-isDeleting=false;
-i=(i+1)%words.length;
-}
-
-setTimeout(type,isDeleting?60:120);
-}
-type();
-
-// Counter
-document.querySelectorAll(".counter").forEach(counter=>{
-
-const update=()=>{
-
-const target=+counter.dataset.target;
-const current=+counter.innerText;
-
-const increment=target/80;
-
-if(current<target){
-counter.innerText=Math.ceil(current+increment);
-setTimeout(update,20);
-}else{
-counter.innerText=target;
-}
-};
-
-update();
-});
-
-// Reveal Animation
-function reveal(){
-
-document.querySelectorAll(".reveal").forEach(el=>{
-
-const windowHeight=window.innerHeight;
-const elementTop=el.getBoundingClientRect().top;
-
-if(elementTop<windowHeight-100){
-el.classList.add("active");
-}
-});
-}
-
-window.addEventListener("scroll",reveal);
-reveal();
-
-// Testimonial Slider
-const testimonials=[
-'"Swargo delivered excellent editing work and was very easy to communicate with."',
-'"Creative, fast, and professional. Highly recommended!"',
-'"Amazing transitions and storytelling skills."'
-];
-
-let t=0;
-
-setInterval(()=>{
-t=(t+1)%testimonials.length;
-document.getElementById("testimonialText").innerText=testimonials[t];
-},4000);
-
-</script>
-
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
